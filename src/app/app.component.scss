@@ -1,0 +1,19 @@
+#grid_main { 
+    display: grid;
+    grid-template-areas: 
+            "toolbar"
+            "outlet"
+            "basement";
+    grid-template-rows: 45px auto 45px;
+    .toolbar {
+        grid-area: toolbar;
+        height: 45px;
+     }
+    .outlet {
+        grid-area: outlet;
+    }
+     .basement {
+        grid-area: basement;
+        height: 45px;
+     }
+}

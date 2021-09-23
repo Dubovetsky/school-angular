@@ -1,0 +1,20 @@
+<div class="dialogs">
+<div mat-dialog-content>
+  <div mat-dialog-title class="title">{{text}}</div>
+  <mat-form-field>
+      <input matInput placeholder="Имя" [(ngModel)]="data_form.name" #named>
+      <mat-icon matSuffix>face</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+      <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+      <input type="tel" matInput [(ngModel)]="data_form.number" placeholder="Телефон" [textMask]="getMask()">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions *ngIf="reffocus()">
+  <button mat-button class="dialog_button button" [mat-dialog-close]="data_former()" cdkFocusInitial [ngClass]="emailFormControl.hasError('email')?'disable':''">Записатся</button>
+</div>
+</div>

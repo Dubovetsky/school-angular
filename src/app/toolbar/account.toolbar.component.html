@@ -1,0 +1,19 @@
+<mat-icon class="acount" [ngClass]="[auth_window?'acount_active':'',getKey()?'acount_active_lk':'']" (click)="account()" *ngIf="collback_note()">account_circle
+  <mat-icon [matBadge]="notifications()" [matBadgeHidden]="isNotifications()" matBadgeSize="small" matBadgeColor="warn" matBadgePosition="above after" class="acount_info"></mat-icon>
+</mat-icon>
+<form class="auth_window" [ngClass]="mobilemode()?'auth_window_mob':''" [ngStyle]="{
+  'opacity': auth_window? 1:0,
+  'visibility': auth_window? 'visible':'hidden'}">
+  <div [ngClass]="warn_auth_window?'warn_auth_window':'warn_auth_window_none'" (click)="warning_auth_window()">
+    <p class="warn_auth_info_text">{{warning_auth_info()}}</p>
+    <button mat-stroked-button>Ок</button>
+  </div>
+  <div *ngIf="logging" class="logging"><mat-spinner></mat-spinner></div>
+  <mat-form-field>
+      <input class="auth_input_in_window" matInput type="email" placeholder="E-mail" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <mat-form-field>
+      <input class="auth_input_in_window" matInput type="password" placeholder="Пароль" [formControl]="passwordFormControl">
+  </mat-form-field>
+  <button mat-stroked-button (click)="enter()">Войти</button>
+</form>

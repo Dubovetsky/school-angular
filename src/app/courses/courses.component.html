@@ -1,0 +1,20 @@
+<div id="grid">
+    <div class="side" *ngIf="!mobilemode()">
+      <ul>
+        <li *ngFor="let data_unit of data">
+          <a mat-button [routerLink]="['/courses']" routerLinkActive="courses" [fragment]="data_unit.fragment" (click)="pos_button(data_unit.fragment)">{{data_unit.text}}</a>
+        </li>
+      </ul>
+  </div>
+  <div class="content">
+    <li class="li">
+      <h2 id="a1"><app-a1></app-a1></h2>
+      <h2 id="a2"><app-a2></app-a2></h2>
+      <h2 id="b1"><app-b1></app-b1></h2>
+      <h2 id="b2"><app-b2></app-b2></h2>
+      <h2 id="c1"><app-c1></app-c1></h2>
+      <h2 id="c2"><app-c2></app-c2></h2>
+      <h2 id="price"><app-price></app-price></h2>
+    </li>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<header>
+  <span class="block">
+    <div class="predlogo" [ngStyle]="{
+      'visibility': showLogo()? 'visible':'hidden',
+      'width': showLogo()? '45px':'0px' 
+    }">
+    <div class="logo"></div>
+    </div>
+    <div class="emblem">Friedrich-Schiller School</div>
+  </span>
+  <nav role="navigation" class="vector">
+    <ul *ngIf="!mobilemode()">
+      <li><a mat-button [routerLink]="['']" routerLinkActive="main">Главная</a></li>
+      <li><a mat-button [routerLink]="['courses']" routerLinkActive="courses">Курсы</a>
+        <ul class="dropdown">
+          <li *ngFor="let data_unit of data">
+            <a mat-button [routerLink]="['/courses']" routerLinkActive="courses" [fragment]="data_unit.fragment" (click)="pos_button(data_unit.fragment)">{{data_unit.text}}</a>
+          </li>
+        </ul>
+      </li>
+      <li><a mat-button [routerLink]="['about']" routerLinkActive="about">О Нас</a></li>
+      <li><a mat-button [routerLink]="['contact']" routerLinkActive="contact">Контакты</a></li>
+      <li><a mat-button [routerLink]="['blog']" routerLinkActive="blog">Блог</a></li>
+      <li class="acount_li">
+        <app-account-toolbar></app-account-toolbar>
+      </li>
+      <span *ngIf="!minimode()">
+        <div class="tel-mail">
+          <app-tel-mail></app-tel-mail>
+        </div>
+      </span>
+    </ul>
+  <ul class="hamb" *ngIf="mobilemode()">
+    <li class="acount_li acount_mob">
+        <app-account-toolbar></app-account-toolbar>
+    </li>
+    <input id="hamburger" class="hamburger" type="checkbox">
+      <label class="hamburger" for="hamburger">
+        <i></i>
+      </label>
+      <section class="drawer-list">
+        <ul>
+            <li><a mat-button [routerLink]="['']" routerLinkActive="main" (click)="clicker()">Главная</a></li>
+            <li><a mat-button (click)="menu()" [ngClass]="menuActive ? 'dropdownmobile':''">Курсы 
+                <span class="activeelement">
+                    <mat-icon>{{menuActive ? 'keyboard_arrow_up':'keyboard_arrow_down'}}</mat-icon>
+                </span>
+            </a>
+              <span class="dropdownmobile" *ngIf="menuActive">
+                  <li *ngFor="let data_unit of data">
+                      <a mat-button [routerLink]="['/courses']" routerLinkActive="courses" [fragment]="data_unit.fragment" (click)="clicker()">{{data_unit.text}}</a>
+                  </li>
+              </span>
+            </li>
+            <li><a mat-button [routerLink]="['about']" routerLinkActive="about" (click)="clicker()">О Нас</a></li>
+            <li><a mat-button [routerLink]="['contact']" routerLinkActive="contact" (click)="clicker()">Контакты</a></li>
+            <li><a mat-button [routerLink]="['blog']" routerLinkActive="blog" (click)="clicker()">Блог</a></li>
+        </ul>
+      </section>
+  </ul> 
+  </nav>
+</header>

@@ -1,0 +1,74 @@
+.grid {
+    margin: auto;
+    display: grid;
+    grid-template-rows: 90px auto 90px;
+}
+.fog {
+    width: 100%;
+    position: absolute;
+    height: calc(100vh - 45px);
+    background: radial-gradient(closest-side at  60% 60%, rgba(47, 47, 92, 0.49), rgba(113, 112, 67, 0.49));
+}
+.slogon {
+    text-align: center;
+    margin: auto;
+    color: #d5e4f5;
+}
+.imgs {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 45px);
+    img {
+        opacity: 0;
+        position: absolute;
+        transition: all 2s ease;
+        object-fit: cover;
+    }
+}
+.logotype {
+    > img {
+        max-height: calc(100vh - 230px);
+    }
+}
+
+.button_mobile {
+    margin-top: 0px !important;
+}
+.button {
+    margin: auto;
+    border-radius: 4px;
+    text-align: center;
+    background-color: rgba(255, 174, 0, 0.883);
+    color: #d5e4f5;
+    > .mat-button {
+        width: 130px;
+    }
+}
+.background_main {
+    width: 100%;
+    height: calc(100vh - 45px);
+}
+.dialogs {
+    width: 250px;
+    .title {
+        text-align: center;
+        margin: auto;
+    }
+    .dialog_button {
+        margin: auto;
+        border-radius: 4px;
+        text-align: center;
+        background-color: rgba(169, 103, 213, 1);
+        color: white;
+    }
+    .mat-form-field {
+        width: 240px;
+    }
+    > mat-dialog-content {
+        background-color: rgba(57, 57, 97, 0.83);
+    }
+    .disable {
+        pointer-events: none;
+    }
+    
+}

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons&display=block");
+body { 
+  font-family: "New Century Schoolbook", "TeX Gyre Schola", serif;
+  > .cdk-overlay-container {
+    z-index: 9999;
+  }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+  height: 100%;
+}
+  

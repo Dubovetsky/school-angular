@@ -1,0 +1,7 @@
+<ul *ngIf="jsondata_" class="main_list">
+  <li class="note" *ngFor="let body_post of jsondata.data">
+    <p [innerHtml]="body_post.data | safeHtml"></p>
+  <br>
+  </li>
+</ul>
+<ul [ngStyle]="{'padding-top': jsondata_bool}"></ul>

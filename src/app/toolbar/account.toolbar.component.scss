@@ -1,0 +1,90 @@
+.acount_info{
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  display: block;
+}
+.acount {
+  margin-right: 5px; 
+  margin-left: 10px; 
+  transition: all 0.2s ease;
+  opacity: 1;
+  color: white;
+  font-size: 45px;
+  display: block;
+  min-height: 45px;
+  min-width: 45px;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.9;
+  }
+}
+.acount_active {
+  color: #a4a5a7f0;
+}
+.acount_active_lk {
+  color: #ffae00e1 !important;
+}
+.auth_window {
+  font-size: 14px;
+  background: #9ab2d7f0;
+  position: absolute;
+  padding: 15px;
+  transition: all 0.2s ease;
+  display: grid;
+  border-radius: 5px;
+  right: 20px;
+  top: 50px;
+}
+input {
+  color: black !important;
+  background-color: #00000000 !important;
+}
+.logging {
+  background: #0c62e254;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  mat-spinner {
+    left: calc(50% - 55px);
+    top: 25%;
+  }
+}
+.warn_auth_window {
+  background: #0c62e254;
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  z-index: 9999999;
+  height: 100%;
+  > button {
+    background: #0c62e270;
+    margin-top: 15px;
+    margin-left: calc(50% - 50px);
+    margin-right: calc(50% - 50px);
+    width: 100px;
+  }
+}
+.warn_auth_window_none {
+  display: none;
+}
+.warn_auth_info_text {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 25%;
+  font-size: 17px;
+}
+.auth_window_mob {
+  font-size: 16px;
+  border-radius: 0;
+  padding-bottom: 100vh;
+  top: 45px;
+  position: fixed;
+  visibility: visible;
+  right: 0px;
+  left: 0px;
+}

@@ -1,0 +1,16 @@
+<div class="background_main">
+  <div class="imgs">
+    <img *ngFor="let img of list_" src="{{img.url}}" width="100%" height="100%" align="middle" [ngStyle]="{'opacity': img.opacity?'1':'0'}">
+  </div>
+  <div class="fog">
+    <div class="grid">
+      <div class="slogon">
+        <h1>{{slogon}}</h1>
+      </div>
+      <div class="logotype">
+        <img src="{{logotype_}}" width="100%" height="100%" align="middle">
+      </div>
+      <div class="button"><a mat-button (click)="openDialog()">{{nameButton}}</a></div>
+    </div>
+  </div>
+</div>
